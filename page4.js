@@ -99,8 +99,8 @@ function showTravelDateFields(val) {
     }
     if (!val) {
         document.querySelector('.travelDateBtn').querySelector('span').style.display = 'none'
-        document.querySelector('.travelDateBtn').style.padding = '22px 0'
-        document.querySelector('.travelDateBtn').style.fontSize = '1rem'
+        document.querySelector('.travelDateBtn').style.padding = '18px 0'
+        document.querySelector('.travelDateBtn').style.fontSize = '0.8rem'
     }
 
 }
