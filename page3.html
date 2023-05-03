@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExTravelMoney</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="main">
+        <div class="overlayShade" style="overflow-y: hidden;display: flex;align-items: end;justify-content: end;">
+            <div class="sortAreaMain" >
+                <div class="sortArea">
+                    <div class="sortSubDiv">
+                        <h2>Sort</h2>
+                        <span onclick="sortDefault()">Default</span>
+                    </div>
+                    <div class="sortSubDiv sortSelector" onclick="setLowToHigh()">
+                        <p>Price</p>
+                        <div>
+                            <img src="assets/sort-up.svg" alt="">
+                            <span class="sortLowToHigh" >Low to High</span>
+                        </div>
+                    </div>
+                    <div class="sortSubDiv sortSelector" onclick="setHighToLow()">
+                        <p>Price</p>
+                        <div>
+                            <img src="assets/sort-down.svg" alt="">
+                            <span>High to Low</span>
+                        </div>
+                    </div>
+                    <div class="sortSubDiv sortSelector">
+                        <p>Ratings</p>
+                    </div>
+                    <div class="sortSubDiv">
+                        <span>Cancel</span>
+                        <span class="sortApply" onclick="sortCardsByPrice()">Apply</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filterAreaMain" >
+                <div class="filterArea">
+                    <div class="filterSubDiv">
+                        <h2>Filters</h2>
+                        <span>Default</span>
+                    </div>
+                    <div class="filterSubDiv filterSelector">
+                        <p>Price</p>
+                        <div>
+                            <img src="assets/sort-up.svg" alt="">
+                            <span>Low to High</span>
+                        </div>
+                    </div>
+                    <div class="filterSubDiv filterSelector">
+                        <p>Price</p>
+                        <div>
+                            <img src="assets/sort-down.svg" alt="">
+                            <span>High to Low</span>
+                        </div>
+                    </div>
+                    <div class="filterSubDiv filterSelector">
+                        <p>Ratings</p>
+                    </div>
+                    <div class="filterSubDiv">
+                        <span>Cancel</span>
+                        <span>Apply</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kycAreaMain" >
+                <div class="kycArea">
+                    <div class="kycSubDiv">
+                        <h2>Please keep the required documents</h2>
+                        <img src="assets/Need few more details-01.svg" alt="">
+                    </div>
+                    <div class="documentsDiv">
+                        <p>Kindly keep them handy for your KYC.</p>
+                        <div><span>1</span>Document 1</div>
+                        <div><span>2</span>Document 2</div>
+                        <div><span>3</span>Document 3</div>
+                        <div><span>4</span>Document 4</div>
+                        <div><span>5</span>Document 5</div>
+                    </div>
+                    <div class="kycSubDiv2">
+                        <img src="assets/Icon-yellow.svg" alt="">
+                        <p>The exchange rate is only valid for 10 mins. <br>
+                            Currency rate will refresh after every cycle.</p>
+                    </div>
+                    <div class="kycSubDiv3" onclick="summaryGenerate()">
+                        <span>Continue</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="header">
+            <div class="headerSub">
+                <img src="assets/backArrow.svg" alt="">
+                <span>Forex Cash</span>
+            </div>
+        </div>
+        <div class="container" style="  background-color: rgb(245 245 245);padding-bottom: 20px;">
+            <div class="storeSection">
+                <div class="searchArea">
+                    <div class="searchBar">
+                        <img src="assets/searchBlack.svg" alt="">
+                        <input class="searchInput" type="text">
+                        <span class="clearBtn">clear</span>
+                    </div>
+                    <img class="searchFilter filterBtn" src="assets/Filter.svg" alt="">
+                    <img class="searchFilter sortBtn" src="assets/Sort.svg" alt="">
+                </div>
+                <h3>3 Forex Stores in Raipur</h3>
+                <div class="storeListing">
+                    <!-- <div class="storeCard" data-price="83282">
+                        <h2>Telibandha, Raipur</h2>
+                        <div class="storeCardChild">
+                            <p>Store # 19326</p>
+                            <div class="toolTipContainer">
+                                <button class="toolTipIcon"><img  src="assets/Icon.svg" alt=""></button>  
+                                <div class="toolTipBox">
+                                    <img  src="assets/tooltip.svg" alt="">
+                                    <p>Forex outlet name & exact address will be shared after placing order</p>
+                                </div>
+                            </div>
+                            
+                            <span>RBI Approved AD Category-II</span>
+                            
+                        </div>
+                        <div  class="storeCardChild">
+                            <img src="assets/delivery.svg" alt="">
+                            <p>Door Delivery (10Km) - <b>₹150</b></p>
+                        </div>
+                        <div  class="storeCardChild">
+                            <img src="assets/storeFee.svg" alt="">
+                            <p>Zero Store Fees</p>
+                        </div>
+                        <p>Payment Methods:</p>
+                        <div  class="storeCardChild">
+                            <span>UPI</span>
+                            <span>Net Banking</span>
+                            <span>Debit Card</span>
+                            <span>NEFT/RTGS</span>
+                        </div>
+                        <div  class="storeCardChild">
+                            <small>₹</small>
+                            <p>83,282</p>
+                            <span>INR</span>
+                        </div>
+                        <div  class="storeCardChild">
+                            <span>Buying USD (Notes) @</span>
+                            <p>₹ 83.28</p>
+                        </div>
+                        <span class="selectBtn">Select</span>
+                    </div>
+                    <div class="storeCard" data-price="83281">
+                        <h2>Gaurav Path, Raipur</h2>
+                        <div class="storeCardChild">
+                            <p>Store # 10898</p>
+                            <div class="toolTipContainer">
+                                <button class="toolTipIcon"><img  src="assets/Icon.svg" alt=""></button>  
+                                <div class="toolTipBox">
+                                    <img  src="assets/tooltip.svg" alt="">
+                                    <p>Forex outlet name & exact address will be shared after placing order</p>
+                                </div>
+                            </div>
+                            <span>RBI Approved AD Category-II</span>
+                            
+                        </div>
+                        <div  class="storeCardChild">
+                            <img src="assets/delivery.svg" alt="">
+                            <p>Free Door Delivery (6Km)<b></b></p>
+                        </div>
+                        <div  class="storeCardChild">
+                            <img src="assets/storeFee.svg" alt="">
+                            <p>Zero Store Fees</p>
+                        </div>
+                        <p>Payment Methods:</p>
+                        <div  class="storeCardChild">
+                            <span>UPI</span>
+                            <span>Net Banking</span>
+                            <span>Debit Card</span>
+                            <span>NEFT/RTGS</span>
+                        </div>
+                        <div  class="storeCardChild">
+                            <small>₹</small>
+                            <p>83,281</p>
+                            <span>INR</span>
+                        </div>
+                        <div  class="storeCardChild">
+                            <span>Buying USD (Notes) @</span>
+                            <p>₹ 83.28</p>
+                        </div>
+                        <span class="selectBtn">Select</span>
+                    </div>
+                    <div class="storeCard"  data-price="83280">
+                        <h2>Byron Bazar, Raipur</h2>
+                        <div class="storeCardChild">
+                            <p>Store # 10733</p>
+                            <div class="toolTipContainer">
+                                <button class="toolTipIcon"><img  src="assets/Icon.svg" alt=""></button>  
+                                <div class="toolTipBox">
+                                    <img src="assets/tooltip.svg" alt="">
+                                    <p>Forex outlet name & exact address will be shared after placing order</p>
+                                </div>
+                            </div>
+                            <span>RBI Approved AD Category-II</span>
+                            
+                        </div>
+                        <div  class="storeCardChild">
+                            <img src="assets/delivery.svg" alt="">
+                            <p>Door Delivery (10Km) - <b>₹150</b></p>
+                        </div>
+                        <div  class="storeCardChild">
+                            <img src="assets/storeFee.svg" alt="">
+                            <p>Zero Store Fees</p>
+                        </div>
+                        <p>Payment Methods:</p>
+                        <div  class="storeCardChild">
+                            <span>UPI</span>
+                            <span>Net Banking</span>
+                            <span>Debit Card</span>
+                            <span>NEFT/RTGS</span>
+                        </div>
+                        <div  class="storeCardChild">
+                            <small>₹</small>
+                            <p>83,280</p>
+                            <span>INR</span>
+                        </div>
+                        <div  class="storeCardChild">
+                            <span>Buying USD (Notes) @</span>
+                            <p>₹ 83.28</p>
+                        </div>
+                        <span class="selectBtn">Select</span>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="page3.js"></script>
+    <script src="page2.js"></script>
+</body>
+
+</html>
