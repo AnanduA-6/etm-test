@@ -1372,7 +1372,7 @@
     width: 100%;
     box-shadow: 0px -8px 12px 6px rgba(0, 0, 0, 0.1), 0px -4px 4px rgba(0, 0, 0, 0.1);
     border-radius: 20px 20px 0px 0px;
-    padding: 20px 0;
+    padding: 30px 0;
     padding-bottom: 15px;
     transition: 0.5s;
     margin-bottom: -100vh;
@@ -1424,7 +1424,7 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
-    margin-top: 1rem;
+    margin-top: 2rem;
     position: relative;
     background-color:  rgba(253,253,253,0.8) ;
 }
@@ -1485,9 +1485,6 @@
     background-color: #14191F;
     color: white;
 }
-.inview {
-    color: red !important;
-  }
 .dateViewer{
     position: absolute;
     width: 100% !important;

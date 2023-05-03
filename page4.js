@@ -240,6 +240,7 @@ closeBtn.addEventListener('click',()=>{
         overLayShade.style.transitionDelay = '0.3s'
         overLayShade.classList.remove('showOverLayShade')
         body.classList.remove('bodyMinified')
+        yearPickerOpen=false;
 })
 const datePickerDone=document.querySelector('.datePickerContinue')
 datePickerDone.addEventListener('click',()=>{
