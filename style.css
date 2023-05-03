@@ -621,10 +621,6 @@
     margin-bottom: 5px;
     transition: 0.2s;
 }
-.storeCard .selectBtn:hover{
-    background-color:#14191F ;
-    color: white;
-}
 
 .toolTipContainer {
     position: relative;
