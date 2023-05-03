@@ -1145,6 +1145,9 @@
     border: 1.5px solid black;
     border-radius: 25px;
     background-color:  #FDFDFD;
+    position: absolute;
+    bottom: 7%;
+    right: 2%;
 }
 .storePicupSub a{
     color: #009E82;
