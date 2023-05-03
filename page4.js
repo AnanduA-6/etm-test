@@ -17,26 +17,26 @@ purposeOfTravelBtn.addEventListener('click', () => {
     overLayShade.classList.add('showOverLayShade')
 })
 
-    let today = new Date();
-    let yearActual = today.getFullYear();
-    let monthActual = today.getMonth() + 1;
-    let dayActual = today.getDate();
+let today = new Date();
+let yearActual = today.getFullYear();
+let monthActual = today.getMonth() + 1;
+let dayActual = today.getDate();
 
 
-    let yearPickerOpen=false;
+let yearPickerOpen = false;
 
 travelDateBtn.addEventListener('click', () => {
     body.classList.add('bodyMinified')
     datePicker.classList.add('showSortArea')
     overLayShade.style.transitionDelay = '0s'
     overLayShade.classList.add('showOverLayShade')
-    initalDateView(dayActual,monthActual,yearActual);
-    yearPickerOpen=true;
+    yearPickerOpen = true;
+    initalDateView(dayActual, monthActual, yearActual);
 })
 
 overLayShade.addEventListener('click', (event) => {
 
-    if(!yearPickerOpen){
+    if (!yearPickerOpen) {
         if (!event.target.closest('.purposeOfTravelAreaMain')) {
             purposeOfTravel.classList.remove('showSortArea');
             overLayShade.style.transitionDelay = '0.3s'
@@ -44,7 +44,7 @@ overLayShade.addEventListener('click', (event) => {
             body.classList.remove('bodyMinified')
         }
     }
-    
+
 
 });
 let purpose;
@@ -114,9 +114,10 @@ const yearComponents = yearContainer.querySelectorAll('span')
 
 
 
-let day=dayActual;
-let month=monthActual;
-let year=yearActual;
+let day = dayActual;
+let month = monthActual;
+let year = yearActual;
+
 container.addEventListener('scroll', () => {
     dateSelector(components, 'day')
 })
@@ -126,7 +127,6 @@ monthContainer.addEventListener('scroll', () => {
 yearContainer.addEventListener('scroll', () => {
     dateSelector(yearComponents, 'year')
 })
-
 
 
 function dateSelector(components, value) {
@@ -149,8 +149,8 @@ function dateSelector(components, value) {
                 }, { distance: Infinity }).element;
 
                 if (value === 'day') {
-                    day = closestElement.textContent;
-                    document.querySelector('.dd').textContent=day;
+                    dayActual = closestElement.getAttribute('date');
+                    document.querySelector('.dd').textContent = closestElement.textContent;
                     components.forEach(item => {
                         item.classList.add('dateFade')
                     })
@@ -158,20 +158,21 @@ function dateSelector(components, value) {
 
                 }
                 if (value === 'month') {
-                    month = closestElement.getAttribute('date');
-                    if(month<10){
-                        month='0'+month;
+                    monthActual = closestElement.getAttribute('date');
+                    if (monthActual < 10) {
+                        document.querySelector('.mm').textContent = '0'+monthActual;
+                    }else{
+                        document.querySelector('.mm').textContent =monthActual;
                     }
-                    document.querySelector('.mm').textContent=month;
                     monthComponents.forEach(item => {
                         item.classList.add('dateFade')
                     })
                     closestElement.classList.remove('dateFade')
                 }
                 if (value === 'year') {
-                    year = closestElement.textContent;
-                    
-                    document.querySelector('.yy').textContent=year;
+                    yearActual = closestElement.textContent;
+
+                    document.querySelector('.yy').textContent = closestElement.textContent;
                     yearComponents.forEach(item => {
                         item.classList.add('dateFade')
                     })
@@ -187,73 +188,77 @@ function dateSelector(components, value) {
 
 }
 
+const closeBtn = document.querySelector('.closeDatePicker')
+closeBtn.addEventListener('click', () => {
+    showTravelDateFields(false);
+    datePicker.classList.remove('showSortArea')
+    overLayShade.style.transitionDelay = '0.3s'
+    overLayShade.classList.remove('showOverLayShade')
+    body.classList.remove('bodyMinified')
+    yearPickerOpen = false;
+})
+const datePickerDone = document.querySelector('.datePickerContinue')
+datePickerDone.addEventListener('click', () => {
+    showTravelDateFields(true);
+    datePicker.classList.remove('showSortArea')
+    overLayShade.style.transitionDelay = '0.3s'
+    overLayShade.classList.remove('showOverLayShade')
+    body.classList.remove('bodyMinified')
+    yearPickerOpen = false;
+})
 
 
-
-function initalDateView(dayActual,monthActual,yearActual) {
-
-    
+function initalDateView(dayActual, monthActual, yearActual) {
+    yearContainer.scrollTop = 0;
+    monthContainer.scrollTop = 0;
+    container.scrollTop = 0;
 
     components.forEach(item => {
         const day = dayActual.toString()
         if (item.getAttribute('date') === day) {
-            const viewArea = document.querySelector('.dateViewer');
-            const targetComponent = item;
-            const viewAreaRect = viewArea.getBoundingClientRect();
-            const targetComponentRect = targetComponent.getBoundingClientRect();
             const containerRect = container.getBoundingClientRect();
-            const scrollPosition = targetComponentRect.top - viewAreaRect.top - containerRect.height / 10;
-            container.scrollTop = scrollPosition;
+            const componentRect = item.getBoundingClientRect();
+
+            const position = {
+                x: componentRect.left - containerRect.left,
+                y: componentRect.top - containerRect.top
+            };
+            container.scrollTop = position.y - 30;
+
         }
     })
     monthComponents.forEach(item => {
+
         const month = monthActual.toString()
         if (item.getAttribute('date') === month) {
-            const viewArea = document.querySelector('.dateViewer');
-            const targetComponent = item;
-            const viewAreaRect = viewArea.getBoundingClientRect();
-            const targetComponentRect = targetComponent.getBoundingClientRect();
             const containerRect = monthContainer.getBoundingClientRect();
-            const scrollPosition = targetComponentRect.top - viewAreaRect.top - containerRect.height / 10;
-            monthContainer.scrollTop = scrollPosition;
+            const componentRect = item.getBoundingClientRect();
+
+            const position = {
+                x: componentRect.left - containerRect.left,
+                y: componentRect.top - containerRect.top
+            };
+            monthContainer.scrollTop = position.y - 30;
+
         }
     })
     yearComponents.forEach(item => {
+
         const year = yearActual.toString()
         if (item.getAttribute('date') === year) {
-            const viewArea = document.querySelector('.dateViewer');
-            const targetComponent=item;
-            const viewAreaRect = viewArea.getBoundingClientRect();
-            const targetComponentRect = targetComponent.getBoundingClientRect();
             const containerRect = yearContainer.getBoundingClientRect();
-            const scrollPosition = targetComponentRect.top - viewAreaRect.top - containerRect.height / 10;
-            yearContainer.scrollTop = scrollPosition;
+            const componentRect = item.getBoundingClientRect();
+
+            const position = {
+                x: componentRect.left - containerRect.left,
+                y: componentRect.top - containerRect.top
+            };
+            yearContainer.scrollTop = position.y - 30;
+
         }
     })
 
+
 }
 
-const closeBtn=document.querySelector('.closeDatePicker')
-closeBtn.addEventListener('click',()=>{
-        showTravelDateFields(false);
-        datePicker.classList.remove('showSortArea')
-        overLayShade.style.transitionDelay = '0.3s'
-        overLayShade.classList.remove('showOverLayShade')
-        body.classList.remove('bodyMinified')
-        yearPickerOpen=false;
-})
-const datePickerDone=document.querySelector('.datePickerContinue')
-datePickerDone.addEventListener('click',()=>{
-    let day=document.querySelector('.dd').textContent
-    let month=document.querySelector('.mm').textContent
-    let year=document.querySelector('.yy').textContent
-    dayActual=day;
-    monthActual=month;
-    yearActual=year;
-    showTravelDateFields(true);
-        datePicker.classList.remove('showSortArea')
-        overLayShade.style.transitionDelay = '0.3s'
-        overLayShade.classList.remove('showOverLayShade')
-        body.classList.remove('bodyMinified')
-})
 
