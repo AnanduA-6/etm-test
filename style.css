@@ -1025,8 +1025,8 @@
     align-items: start;
     justify-content: center;
     flex-direction: column;
-    row-gap: 1.5rem;
-    padding-bottom: 3rem;
+    row-gap: 1rem;
+    padding-bottom: 1rem;
 }
 .summarySubDiv h3{
     font-size: 1.3rem;
@@ -1088,7 +1088,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 1.5rem;
-    padding: 36px 0;
+    padding: 15px 0;
 }
 .summarySubDiv2 p{
     font-size: 1.1rem;
@@ -1107,11 +1107,11 @@
     display: flex;
     flex-direction: column;
     row-gap: 1.8rem;
-    padding: 30px 0;
+    padding: 20px 0;
 }
 .summarySubDiv3 .uploadTitle{
     font-weight: 600;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
 }
 .summarySubDiv3 .uploadDocument{
     display: flex;
@@ -1127,18 +1127,22 @@
     justify-content: center;
     border: 1px solid  #14191F;
     border-radius: 15px;
-    padding: 5px 10px;
+    padding: 3px 8px;
+    font-size: 0.8rem;
 }
 .uploadDocument .count{
     background-color: #DBF5ED;
-    padding: 2px 7px;
+    padding: 2px 5px;
     border-radius: 30px;
     font-size: 0.8rem;
     font-weight: 600;
 }
 .uploadDocument p{
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 500;
+}
+.uploadDocument small{
+    font-size: 0.7rem;
 }
 .summarySubDiv4{
     display: flex;
@@ -1156,17 +1160,22 @@
     row-gap: 0.5rem;
 }
 .storePicupSub div p{
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
 }
+.storePicupSub div span{
+    font-size: 0.8rem;
+}
+
 .changeStore{
-    padding: 7px 10px;
+    padding: 2px 5px;
     border: 1.5px solid black;
     border-radius: 25px;
     background-color:  #FDFDFD;
     position: absolute;
     bottom: 7%;
     right: 2%;
+    font-size: 0.8rem;
 }
 .storePicupSub a{
     color: #009E82;
@@ -1180,7 +1189,7 @@
     border-radius: 20px;
 }
 .summarySubDiv4 .title{
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 600;
 }
 .detailsSpan{
@@ -1202,6 +1211,9 @@
     row-gap: 1rem;
     padding: 28px 0;
 }
+.summarySubDiv5 h3{
+    font-size: 1.1rem;
+}
 .summaryContainer{
     border: 1.5px solid #DEE2E1;
     display: flex;
@@ -1221,6 +1233,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100% !important;
+    font-size: 0.8rem;
 }
 .summaryContainer div{
     width: 90%;
@@ -1243,17 +1256,20 @@
 }
 .summaryTitle p{
     width: 90%;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 .totalDiv{
     border-top: 1.5px solid #DEE2E1;
     padding-top: 16px;
     font-weight: 600;
+    font-size: 0.9rem !important;
 }
+
 .rateTimer{
     display: flex;
     align-items: end;
     justify-content: end;
+    font-size: 0.8rem;
 }
 .rateTimer span{
     color: #49A27A;
@@ -1265,6 +1281,7 @@
 }
 .summarySubDiv6 h3{
     margin-bottom: 15px;
+    font-size: 1.1rem;
 }
 .paymentChoose{
     display: flex;
@@ -1282,24 +1299,25 @@
 }
 .paymentChoose input{
     margin-right: 20px;
-    transform: scale(1.7);
+    transform: scale(1.4);
 }
 .paymentChoose p{
     font-weight: 600;
+    font-size: 1rem;
 }
 .summarySubDiv7{
     display: flex;
     align-items: start;
-    padding: 10px 0 20px 0;
+    padding: 10px 0 0px 0;
 }
 .summarySubDiv7 input{
-    transform: scale(1.7);
+    transform: scale(1.2);
     margin-right: 20px;
     margin-top: 10px;
 }
 .summarySubDiv7 p{
-    font-size: 0.9rem;
-    line-height: 25px;
+    font-size: 0.8rem;
+    line-height: 23px;
 }
 .summarySubDiv7 p span{
     color: #009E82;
@@ -1314,11 +1332,11 @@
 .summarySubDiv8 span{
     background-color: #C7CCCA;
     width: 100%;
-    padding: 20px 0;
+    padding: 15px 0;
     text-align: center;
     border-radius: 40px;
     color: white;
-    font-size: 1.1rem;
+    font-size: 1rem;
 
 }
 
