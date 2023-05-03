@@ -16,6 +16,27 @@ purposeOfTravelBtn.addEventListener('click', () => {
     overLayShade.style.transitionDelay = '0s'
     overLayShade.classList.add('showOverLayShade')
 })
+const cancelationPolicyBtn=document.querySelector('.cancelationPolicyBtn')
+const cancelationPolicy=document.querySelector('.cancelationPolicyAreaMain')
+const closeCancelationPolicy=document.querySelector('.cancelationPolicyArea').querySelector('span')
+let cancelationPolicyOpen=false
+cancelationPolicyBtn.addEventListener('click',()=>{
+    body.classList.add('bodyMinified')
+    cancelationPolicy.classList.add('showSortArea')
+    overLayShade.style.transitionDelay = '0s'
+    overLayShade.classList.add('showOverLayShade')
+    cancelationPolicyOpen=true;
+})
+closeCancelationPolicy.addEventListener('click',()=>{
+    cancelationPolicy.classList.remove('showSortArea')
+    overLayShade.style.transitionDelay = '0.3s'
+    overLayShade.classList.remove('showOverLayShade')
+    body.classList.remove('bodyMinified')
+    cancelationPolicyOpen=false;
+})
+
+
+//  datepicker code
 
 let today = new Date();
 let yearActual = today.getFullYear();
@@ -36,7 +57,7 @@ travelDateBtn.addEventListener('click', () => {
 
 overLayShade.addEventListener('click', (event) => {
 
-    if (!yearPickerOpen) {
+    if (!yearPickerOpen&&!cancelationPolicy) {
         if (!event.target.closest('.purposeOfTravelAreaMain')) {
             purposeOfTravel.classList.remove('showSortArea');
             overLayShade.style.transitionDelay = '0.3s'
@@ -62,6 +83,7 @@ purposeList.addEventListener('click', (event) => {
 
     }
 })
+
 document.querySelector('#paymentMethod').checked = 'true'
 document.querySelector('#deliveryMode').checked = 'true'
 
@@ -105,6 +127,8 @@ function showTravelDateFields(val) {
 
 }
 
+
+
 const container = document.querySelector('.day');
 const components = document.querySelector('.day').querySelectorAll('span');
 const monthContainer = document.querySelector('.month')
@@ -117,6 +141,9 @@ const yearComponents = yearContainer.querySelectorAll('span')
 let day = dayActual;
 let month = monthActual;
 let year = yearActual;
+ let date=[day,month,year]
+
+let datePickerValue={"date":date,"picked":false};
 
 container.addEventListener('scroll', () => {
     dateSelector(components, 'day')
@@ -196,6 +223,7 @@ closeBtn.addEventListener('click', () => {
     overLayShade.classList.remove('showOverLayShade')
     body.classList.remove('bodyMinified')
     yearPickerOpen = false;
+    datePickerValue.picked=false;
 })
 const datePickerDone = document.querySelector('.datePickerContinue')
 datePickerDone.addEventListener('click', () => {
@@ -205,6 +233,9 @@ datePickerDone.addEventListener('click', () => {
     overLayShade.classList.remove('showOverLayShade')
     body.classList.remove('bodyMinified')
     yearPickerOpen = false;
+    datePickerValue.picked=true;
+    datePickerValue.date=[dayActual,monthActual,yearActual]
+    console.log(datePickerValue.date);
 })
 
 

@@ -1385,6 +1385,36 @@
     align-items: center;
     
 }
+.cancelationPolicyAreaMain{
+    position: absolute;
+    background-color: #FDFDFD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-shadow: 0px -8px 12px 6px rgba(0, 0, 0, 0.1), 0px -4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px 20px 0px 0px;
+    padding: 30px 0;
+    transition: 0.5s;
+    margin-bottom: -100vh;
+}
+.cancelationPolicyArea{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    row-gap: 0.5rem;
+    color: #14191F; 
+    align-items: center;
+}
+.cancelationPolicyArea span{
+    background-color: #14191F;
+    color: white;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 12px 0;
+    border-radius: 30px;
+    width: 100%;
+}
 .showSortArea{
     margin-bottom: 0;
 }
@@ -1418,6 +1448,7 @@
 .travelDateBtn span{
     display: none;
     font-size: 0.8rem !important;
+    
 }
 
 .datePickerArea .scrollContainer{
@@ -1497,4 +1528,24 @@
 }
 .dd,.mm,.yy{
     display: inline !important;
+}
+.cancelationPolicyAreaScroll{
+    width: 100%;
+    height: 20rem;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    text-align: justify;
+    hyphens: auto;
+    padding: 10px 0;
+}
+.cancelationPolicyAreaScroll h2{
+    font-size: 1.1rem;
+}
+.cancelationPolicyAreaScroll p{
+    font-size: 0.8rem;
+}
+.cancelationPolicyAreaScroll::-webkit-scrollbar{
+    display: none;
 }
