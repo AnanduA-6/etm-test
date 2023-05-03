@@ -1029,16 +1029,16 @@
     padding-bottom: 3rem;
 }
 .summarySubDiv h3{
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 .summarySubDiv p{
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
 }
 .summarySubDiv input[type='text']{
     border: 1.3px solid #C7CCCA;
     outline: none;
-    padding: 15px 0;
+    padding: 18px 0;
     width: 100%;
     border-radius: 10px;
     text-indent: 20px;
@@ -1060,10 +1060,10 @@
     color: #5A6068 !important;
 }
 .summarySubDiv .sub1 img{
-    width: 0.8rem;
+    width: 0.9rem;
 }
 .summarySubDiv .sub1 span{
-    font-size: 0.7rem;
+    font-size: 0.9rem;
 }
 .summarySubDiv .sub2{
     display: flex;
@@ -1077,7 +1077,7 @@
    height: 15px;
 }
 .summarySubDiv .sub2 span{
-    font-size: 0.7rem;
+    font-size: 0.8rem;
 }
 .divider{
     height: 1rem;
@@ -1091,12 +1091,12 @@
     padding: 36px 0;
 }
 .summarySubDiv2 p{
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
 }
 .summarySubDiv2 div{
     width: 100%;
-    padding: 15px 0;
+    padding: 18px 0;
     border: 1.3px solid #C7CCCA;
     text-indent: 20px;
     font-size: 0.8rem;
