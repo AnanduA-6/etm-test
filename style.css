@@ -52,7 +52,7 @@
 }
 
 .currencySelector h2 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 600;
     line-height: 25px;
     color: #14191F;
@@ -603,7 +603,7 @@
     font-size: 1.2rem;
     border: 1.5px solid #14191F;
     border-radius: 50px;
-    padding: 20px 0;
+    padding: 15px 0;
     margin-top: 10px;
     margin-bottom: 5px;
     transition: 0.2s;
