@@ -1071,6 +1071,8 @@
     font-size: 0.9rem;
     color: #14191F;
     width: 100%;
+    margin-left: 8px;
+    margin-top: 5px;
 }
 .summarySubDiv .sub2 input{
    width: 15px;
@@ -1147,7 +1149,7 @@
 .summarySubDiv4{
     display: flex;
     flex-direction: column;
-    padding: 25px 0;
+    padding: 15px 0;
 }
 .summarySubDiv4 .storePicup{
     display: flex;
@@ -1168,7 +1170,7 @@
 }
 
 .changeStore{
-    padding: 2px 5px;
+    padding: 5px 5px;
     border: 1.5px solid black;
     border-radius: 25px;
     background-color:  #FDFDFD;
@@ -1327,7 +1329,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 0;
+    padding: 20px 0 25px 0;
 }
 .summarySubDiv8 span{
     background-color: #C7CCCA;
