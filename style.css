@@ -423,7 +423,7 @@
 
 .storeSection {
     width: 90%;
-    padding-top: 1.5rem;
+    padding-top: 0.5rem;
 }
 
 .storeSection .searchArea {
@@ -475,10 +475,10 @@
 
 .storeSection h3 {
     color: #14191F;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: normal;
-    margin-top: 2.3rem;
-    margin-bottom: 2.5rem;
+    margin-top: 1.3rem;
+    margin-bottom: 1.5rem;
 }
 
 .storeListing {
@@ -495,17 +495,20 @@
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 1px 3px 1px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    row-gap: 1.3rem;
+    row-gap: 0.7rem;
 }
 
 .storeCard h2 {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
 }
 
 
 
 .storeCard div p {
     color: #14191F;
+}
+.storeCard p{
+    font-size: 0.8rem;
 }
 
 .storeCardChild:nth-child(2) {
@@ -516,7 +519,7 @@
 }
 
 .storeCardChild:nth-child(2) img {
-    width: 1.1rem;
+    width: 0.8rem;
 }
 
 .storeCardChild:nth-child(2) span {
@@ -555,6 +558,7 @@
     background-color: #DEFBE4;
     border-radius: 20px;
     padding: 6px 15px;
+    font-size: 0.8rem;
 }
 
 .storeCardChild:nth-child(6) {
@@ -579,7 +583,7 @@
 .storeCardChild:nth-child(7) p {
     color: #14191F;
     font-weight: 800;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .storeCardChild:nth-child(7) span {
@@ -596,10 +600,12 @@
 
 .storeCardChild:nth-child(8) span {
     color: #5A6068;
+    font-size: 0.8rem;
 }
 
 .storeCardChild:nth-child(8) p {
     font-weight: 600;
+    font-size: 0.9rem;
 }
 
 .storeCard .selectBtn {
@@ -607,10 +613,11 @@
     align-items: center;
     justify-content: center;
     color: #14191F;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
     border: 1.5px solid #14191F;
     border-radius: 50px;
-    padding: 15px 0;
+    padding: 12px 0;
     margin-top: 10px;
     margin-bottom: 5px;
     transition: 0.2s;

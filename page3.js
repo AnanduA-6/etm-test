@@ -131,7 +131,7 @@ newData.branch_id.forEach((item, index) => {
        <img src="assets/storeFee.svg" alt="">
        <p>Zero Store Fees</p>
    </div>
-   <p>Payment Methods:</p>
+   <p style="font-size:0.9rem;">Payment Methods:</p>
    <div  class="storeCardChild">
        <span>UPI</span>
        <span>Net Banking</span>
