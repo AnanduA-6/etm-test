@@ -563,9 +563,8 @@
 
 .storeCardChild:nth-child(6) {
     display: flex;
-    column-gap: 1rem;
-    column-gap: 1rem;
-    row-gap: 0.8rem;
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
     flex-wrap: wrap;
 }
 
