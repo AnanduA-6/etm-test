@@ -47,23 +47,22 @@
                 </div> -->
                 <select class="locDropDown" name="" id="">
                     <option value="null">Select</option>
-                    <option value="Bangalore">Bangalore</option>
-                    <option value="Hyderabad">Hyderabad</option>
                     <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Calicut">Calicut</option>
                     <option value="Chandigarh">Chandigarh</option>
+                    <option value="Chennai">Chennai</option>
                     <option value="Delhi">Delhi</option>
-                    <option value="Noida">Noida</option>
                     <option value="Gurgaon">Gurgaon</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Kochi">Kochi</option>
+                    <option value="Kolkata">Kolkata</option>
                     <option value="Mumbai">Mumbai</option>
+                    <option value="Noida">Noida</option>
                     <option value="Pune">Pune</option>
                     <option value="Surat">Surat</option>
-                    <option value="Chennai">Chennai</option>
-                    <option value="Kolkata">Kolkata</option>
-                    <option value="Kochi">Kochi</option>
-                    <option value="Trivandrum">Trivandrum</option>
-                    <option value="Calicut">Calicut</option>
                     <option value="Trissur">Trissur</option>
-
+                    <option value="Trivandrum">Trivandrum</option>
                 </select>
                 <div class="locationListing">
                     <!-- <p class="locationListingItems">Byron Baazar, Raipur &nbsp;&nbsp;<span>(1 Forex Stores)</span></p>
@@ -80,34 +79,34 @@
                 </div>
             </div>
         </div>
-
+        <img src="assets/Icon.svg" alt="">
     </div>
 
     <script>
-        let token=sessionStorage.getItem('token')
+        let token = sessionStorage.getItem('token')
         document.querySelector('.locDropDown').addEventListener('change', (e) => {
             let input = e.target.value
 
             if (input != 'null') {
-            fetch('https://mvc.extravelmoney.com/pwa-functions/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: `action=store_list&area=${input}&token=${token}&all=all&district=${input}`
-            })
-                .then(response => response.json())
-                .then(data => {
-                    // console.log(token);
-                    // console.log(data);
-                    const storesData = JSON.stringify(data)
-                    sessionStorage.setItem('storesData', storesData)
-
-                    window.location.href = "page3.html";
-                    searchBar.value = '';
+                fetch('https://mvc.extravelmoney.com/pwa-functions/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: `action=store_list&area=${input}&token=${token}&all=all&district=${input}`
                 })
-                .catch(error => console.error(error))
-                
+                    .then(response => response.json())
+                    .then(data => {
+                        // console.log(token);
+                        // console.log(data);
+                        const storesData = JSON.stringify(data)
+                        sessionStorage.setItem('storesData', storesData)
+
+                        window.location.href = "page3.html";
+                        searchBar.value = '';
+                    })
+                    .catch(error => console.error(error))
+
             }
 
         })
