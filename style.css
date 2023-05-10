@@ -272,11 +272,11 @@
     padding-top: 35px;
     /* display: none; */
     transition: 0.4s;
-    height: 21rem;
+    height: 30rem;
 }
 
 .showDropDownList {
-    top: calc(100vh - 22rem);
+    top: calc(100vh - 29rem);
 }
 
 .overlayShade {
@@ -592,17 +592,17 @@
     color: #5A6068;
 }
 
-.storeCardChild:nth-child(8) {
+.storeCardChildX {
     display: flex;
     column-gap: 1rem;
 }
 
-.storeCardChild:nth-child(8) span {
+.storeCardChildX span {
     color: #5A6068;
     font-size: 0.8rem;
 }
 
-.storeCardChild:nth-child(8) p {
+.storeCardChildX p {
     font-weight: 600;
     font-size: 0.9rem;
 }
@@ -1042,7 +1042,7 @@
     width: 100%;
     border-radius: 10px;
     text-indent: 20px;
-    font-size: 1rem;
+    font-size: 0.8rem;
     
 }
 .summarySubDiv input[type='text']::placeholder{
@@ -1415,6 +1415,36 @@
     border-radius: 30px;
     width: 100%;
 }
+.termsAndConditionAreaMain{
+    position: absolute;
+    background-color: #FDFDFD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-shadow: 0px -8px 12px 6px rgba(0, 0, 0, 0.1), 0px -4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px 20px 0px 0px;
+    padding: 30px 0;
+    transition: 0.5s;
+    margin-bottom: -100vh;
+}
+.termsAndConditionArea{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    row-gap: 0.5rem;
+    color: #14191F; 
+    align-items: center;
+}
+.termsAndConditionArea span{
+    background-color: #14191F;
+    color: white;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 12px 0;
+    border-radius: 30px;
+    width: 100%;
+}
 .showSortArea{
     margin-bottom: 0;
 }
@@ -1548,4 +1578,322 @@
 }
 .cancelationPolicyAreaScroll::-webkit-scrollbar{
     display: none;
+}
+.termsAndConditionAreaScroll{
+    width: 100%;
+    height: 20rem;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    text-align: justify;
+    hyphens: auto;
+    padding: 10px 0;
+}
+.termsAndConditionAreaScroll h2{
+    font-size: 1.1rem;
+}
+.termsAndConditionAreaScroll p{
+    font-size: 0.8rem;
+}
+.termsAndConditionAreaScroll::-webkit-scrollbar{
+    display: none;
+}
+.succesPageMain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 1.2rem;
+    width: 90%;
+    color: #14191F !important;
+    padding: 10px 0;
+}
+.succesPageMain h2{
+    text-align: center;
+    font-size: 1rem;
+}
+.successMessage{
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 20px;
+}
+.alertMessage{
+    display: flex;
+    align-items: start;
+    font-size: 0.7rem;
+    background-color: #F4F6F5;
+    column-gap: 1rem;
+    padding: 12px;
+    border-radius: 8px;
+    line-height: 20px;
+}
+.alertMessage img{
+    margin-top: 2px;
+
+}
+.trackMyOrderBtn{
+    border:1.3px solid #14191F;
+    width: 100%;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 30px;
+    margin-top: 5rem;
+}
+.alertMessage span{
+    color: #009E82;
+    text-decoration: underline;
+}
+.alertMessage small{
+    display: none;
+    font-size: 0.7rem;
+}
+
+
+/* track order  */
+.trackOrderMain{
+    width: 100%;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.orderCard,.orderCardOverView{
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #DEE2E1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    width: 85%;
+    padding: 10px 0 0 0;
+}
+.orderCard div,.orderCardOverView div{
+    padding: 0 10px;
+}
+.orderCardOverView{
+    padding-bottom: 10px;
+}
+.orderCrdSubDiv1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #8C9097;
+}
+.pendingOrder span:nth-child(2){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #14191F;
+    background-color: #FFE5E2;
+    border-radius: 10px;
+    padding: 0 5px 0 0;
+    column-gap: 5px;
+}
+.canceledOrder span:nth-child(2){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #14191F;
+    background-color: #FFE5E2;
+    border-radius: 10px;
+    padding: 0 5px 0 0;
+    column-gap: 5px;
+}
+.completedOrder span:nth-child(2){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #14191F;
+    background-color: #DEFBE4;
+    border-radius: 10px;
+    padding: 0 5px 0 0;
+    column-gap: 5px;
+}
+.orderCrdSubDiv1 span:nth-child(2) img{
+    width: 13px;
+}
+.orderCrdSubDiv2{
+    display: flex;
+    column-gap: 0.2rem;
+}
+.orderCrdSubDiv2 h4{
+    font-size: 1.6rem;   
+    margin-top: auto;
+}
+.orderCrdSubDiv2 span{
+    color: #5A6068;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.orderCrdSubDiv3{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+}
+.orderCrdSubDiv3 span{
+    width: 50%;
+}
+.orderCrdSubDiv3 span:nth-child(even){
+    text-align: end;
+}
+.orderCrdSubDiv3 span:nth-child(3),.orderCrdSubDiv3 span:nth-child(4){
+   font-weight: 600;
+
+}
+.orderCrdSubDiv3 small{
+    font-weight: normal;
+}
+.orderCrdSubDiv4{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #F4F6F5;
+    padding: 15px 10px !important;
+    border-radius: 0 0 10px 10px;
+}
+.orderCrdSubDiv4 span{
+    display: flex;
+}
+.orderCrdSubDiv4 span p{
+    font-weight: 600;
+}
+.trackOrderMain .title{
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    width: 85%;
+}
+
+.singleOrder .currencies{
+    background-color: #F4F6F5;
+    border: 1px solid #DEE2E1;
+    width: 80%;
+    border-radius: 10px;
+    padding: 0 10px;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.singleOrder .orderCrdSubDiv3 span:nth-child(3) {
+    font-weight: normal;
+}
+.singleOrder .currencies .orderCrdSubDiv3:nth-child(odd){
+    border-bottom: 1px solid #DEE2E1; 
+}
+.singleOrder .currencies .orderCrdSubDiv3{
+    padding: 10px 0;
+}
+.singleOrder .summaryContainer{
+    width: 85% !important;
+    margin-top: 2rem;
+}
+.kycUploadDetails{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    row-gap: 1rem;
+    margin-top: 2rem;
+}
+.kycUploadDetails h3{
+    margin-bottom: 0.2rem;
+}
+.kycUploadDetails div{
+    display: flex;
+
+}
+.kycUploadDetails div img{
+    width: 13px;
+    margin-right: 1rem;
+}
+.kycAlternative{
+    background-color: #F4F6F5;
+    display: flex;
+    margin-top: 2rem;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    border-radius: 10px;
+}
+.kycAlternative div{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    width: 90%;
+    column-gap: 0.5rem;
+}
+.kycAlternative div p{
+    line-height: 22px;
+}
+.singleOrder .buttonsDiv{
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+
+}
+.singleOrder .buttonsDiv span{
+    width: 48%;
+    text-align: center;
+    padding: 15px 0;
+    border: 1.5px solid #14191F;
+    border-radius: 30px;
+}
+.singleOrder .buttonsDiv span:nth-child(2){
+    background-color: #0E1226;
+    color: white;
+}
+
+.wh_currencyAddingSection{
+    column-gap: 0.2rem;
+    justify-content: start;
+    width: 85%;
+    height: 2rem;
+}
+.withHistory .currencySelectorMain{
+    background: #fff !important;
+}
+.withHistory .approxValueIndicator{
+    margin-bottom: 0.5rem;
+    padding-left: 0;
+}
+.wh_divider{
+    height: 1rem;
+    background-color: #F4F6F5;
+    width: 100% !important;
+    display: none;
+    margin-top: 1rem;
+}
+
+.withHistory .trackOrderMain{
+    display: none;
+}
+.seeAllBtn{
+    color: #009E82;
+    font-weight: 600;
+}
+.withHistory .currencyAddingSection{
+    width: 7rem;
+}
+.whContainer{
+    align-items: start;
+    width: 95%;
+    margin-left: auto;
+}
+.whgetRateBtnContainer{
+    height: 0rem;
+    padding: 0;
+}
+.whgetRateBtnContainer .getRateBtn{
+    position: absolute;
+    width: 6rem;
+    height: 2.5rem;
+    bottom: 1.8rem;
+    right: 5%;
 }

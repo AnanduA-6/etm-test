@@ -1,5 +1,9 @@
-
-
+if(sessionStorage.getItem('token')==='null'){
+    window.location.href='index.html'
+}
+if(sessionStorage.getItem('storesData')==='null'){
+    window.location.href='page2.html'
+}
 const searchInput = document.querySelector('.searchInput')
 const clearBtn = document.querySelector('.clearBtn')
 
@@ -101,13 +105,33 @@ function sortCardsByPrice() {
 function sortDefault() {
     console.log('defaultSort');
 }
-
+    
 
 const storesData = sessionStorage.getItem('storesData')
 const newData = (JSON.parse(storesData));
+console.log(newData);
+let doorDelivery;
+
+document.querySelector('.storeListingTitle').textContent=`${newData.branch_id.length} Forex Stores in ${newData.curarea}`;
 // console.log(newData);
 const cardContainer = document.querySelector('.storeListing');
 newData.branch_id.forEach((item, index) => {
+    if(newData.dd[index]==='0'){
+        doorDelivery='<p>No door delivery</p>'
+    }else if(newData.dd[index]==='1'){
+        if(newData.g_total[index]<newData.ddmin[index]){
+            doorDelivery='<p>No door delivery</p>'
+        }
+        else if(newData.g_total[index]>newData.ddmin[index]){
+            // if(newData.g_total[index]>newData.ddfree[index]){
+            //     doorDelivery=`<p>Free door delivery (${newData.dddist[index]}km)</p>`
+            // }
+            // else{
+            //     doorDelivery=`<p>Door Delivery (${newData.dddist[index]}km) - <b>₹${newData.ddfee[index]}</b></p>`
+            // }
+            doorDelivery=`<p>Door Delivery (within 6km)<b>&nbsp; &nbsp;  Fee: ₹200</b></p>`
+        }
+    }
     cardContainer.innerHTML+= `<div class="storeCard" data-price="83282">
    <h2>${newData.area[index]}</h2>
    <div class="storeCardChild">
@@ -125,7 +149,8 @@ newData.branch_id.forEach((item, index) => {
    </div>
    <div  class="storeCardChild">
        <img src="assets/delivery.svg" alt="">
-       <p>Door Delivery (10Km) - <b>₹150</b></p>
+
+        ${doorDelivery}
    </div>
    <div  class="storeCardChild">
        <img src="assets/storeFee.svg" alt="">
@@ -133,21 +158,20 @@ newData.branch_id.forEach((item, index) => {
    </div>
    <p style="font-size:0.9rem;">Payment Methods:</p>
    <div  class="storeCardChild">
-       <span>UPI</span>
-       <span>Net Banking</span>
-       <span>Debit Card</span>
+       ${newData.payonline[index]==='1'?'<span>Net Banking</span>':''}
        <span>NEFT/RTGS</span>
    </div>
    <div  class="storeCardChild">
        <small>₹</small>
-       <p>83,282</p>
+       <p>${newData.g_total[index].toLocaleString('en-US')}</p>
        <span>INR</span>
    </div>
-   <div  class="storeCardChild">
-       <span>Buying USD (Notes) @</span>
-       <p>₹ 83.28</p>
-   </div>
-   <span class="selectBtn" onclick="selectStore('${[newData.area[index],newData.branch_id[index]]}')">Select</span>
+   ${newData.cust_curr[index].map((item,num)=>{
+   return`<div  class="storeCardChildX">
+    <span>Buying ${item} (Notes) @</span><p>₹ ${newData.cust_rate[index][num]}</p>   
+   </div>`
+   }).join('')}
+   <span class="selectBtn" onclick="selectStore(${newData.branch_id[index]})">Select</span>
 </div>`
 })
 
@@ -165,16 +189,16 @@ toolTipIcon.forEach((item, index) => {
     })
 })
 let storeSelected;
+
 function selectStore(value){
-     storeSelected=value; 
+    
+    storeSelected=value;
+    sessionStorage.setItem('branchId',storeSelected);
     showKyc();
 }
 
 
-function summaryGenerate(){
-    console.log(storeSelected);
-    sessionStorage.setItem('storeSelected',storeSelected)
-                
-    window.location.href = "page4.html";
-}
 
+document.querySelector('.summaryGenerateBtn').addEventListener('click',()=>{   
+    window.location.href = "page4.html";
+})

@@ -1,9 +1,9 @@
 
 
 
-
+sessionStorage.setItem('confirmation', false);
 const value = sessionStorage.getItem('token');
-console.log(value, 'got token in page 1');
+// console.log(value, 'got token in page 1');
 
 
 const dropDown = document.querySelectorAll('.dropDownCurrency')
@@ -201,7 +201,7 @@ document.querySelector('.amountInput3').addEventListener('input', (e) => {
 const inputListener = document.querySelectorAll('.amountInput')
 inputListener.forEach(item => {
     item.addEventListener('input', () => {
-        if (amountArray.length != 0 && currencyArray.length != 0) {
+        if (amountArray.length != 0 && currencyArray.length != 0&&amountArray[0]!="") {
             getRateBtn.style.background = '#0E1226'
             amountString = amountArray.join(',');
             currencyString = currencyArray.join(',');
@@ -251,12 +251,18 @@ dropDownList.addEventListener('click', (event) => {
 
 const approxAll = document.querySelectorAll('.approx')
 function changeApprox(data) {
+    console.log(data);
     approxAll.forEach(item => {
         item.textContent = data
     })
 }
 
 getRateBtn.addEventListener('click', () => {
+    getRateFunction();
+})
+
+function getRateFunction() {
+    console.log('hey');
     if (amountArray.length != 0 && currencyArray.length != 0) {
 
 
@@ -272,10 +278,9 @@ getRateBtn.addEventListener('click', () => {
                 let status = data.status
                 let token = data.token
                 if (status === 1) {
-                    console.log(token);
                     sessionStorage.setItem('token', token);
                     const value = sessionStorage.getItem('token');
-                    console.log(value, 'got token');
+                    // console.log(value, 'got token');
                     const inputElements = document.querySelectorAll('input');
 
                     inputElements.forEach((input) => {
@@ -291,9 +296,88 @@ getRateBtn.addEventListener('click', () => {
     else {
         console.log('not accessible');
     }
+}
+
+
+
+
+let uid = 34799;
+fetch('https://mvc.extravelmoney.com/pwa-functions/', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: `action=order_list&uid=${uid}`
 })
+    .then(response => response.json())
+    .then(data => {
+        if (data.result === 'true') {
 
+            document.querySelector('.scrollAreaContainer').style.display = 'none'
+            document.querySelector('.getRateBtnContainer').classList.add('whgetRateBtnContainer')
+            document.querySelector('.main').classList.add('withHistory')
+            document.querySelectorAll('.currencyAddingSection').forEach(item => {
+                item.innerHTML = '<img src="assets/addBtnRound.svg" alt="" style="width:1rem;"><span class="currencyAdding">Add currency</span>'
+                item.classList.add('wh_currencyAddingSection')
+            })
+            document.querySelector('.wh_divider').style.display = 'block'
+            document.querySelector('.withHistory').querySelector('.trackOrderMain').style.display = 'flex'
 
+            let element=data.order_list[0];
+            let date = new Date(element.date);
 
+            let monthName = date.toLocaleString('default', { month: 'long' }).substring(0, 3);
+            let day = date.getDate();
+            let year = date.getFullYear();
+            let status;
+            if (element.status === '1') {
+                status = '<img src="assets/pendingOrder.svg" alt="">Pending Order Confirmation'
+            }
+            if (element.status === '2') {
+                status = '<img src="assets/pendingOrder.svg" alt="">In Transit'
+            }
+            if (element.status === '3') {
+                status = '<img src="assets/confirmedOrder (1).svg" alt="">Transaction Complete'
+            }
+            if (element.status === '4') {
+                status = '<img src="assets/pendingOrder.svg" alt="">KYC Verification'
+            }
+            if (element.status === '5') {
+                status = '<img src="assets/canceledOrder.svg" alt="">Cancelled'
+            }
 
+            document.querySelector('.withHistory').querySelector('.orderCardContainer').innerHTML =
+                `<div class="orderCard " style="width:95%;">
+                <div class="orderCrdSubDiv1 pendingOrder">
+                    <span>Currency</span>
+                    <span>
+                        ${status}
+                    </span>
+                </div>
+                ${element.currency.map((item, index) => {
+                    return `<div class="orderCrdSubDiv2"><p>${item}</p><h4>${element.amount[index]}</h4><span>(₹${element.exch_value[index].toLocaleString('en-US')})</span></div>`
+                }).join("")}
+                <div class="orderCrdSubDiv3">
+                    <span>Total Exchange Value</span>
+                    <span>Booked On</span>
+                    <span>₹${element.total_value.toLocaleString('en-US')} <small>(${element.currency.join('+')})</small></span>
+                    <span>${day} ${monthName} ${year}</span>
+                </div>
+                <div class="orderCrdSubDiv4">
+                    <span>Forex Order ID: <p>${element.invoiceid}</p></span>
+                    <img onclick=orderSummary(${element.invoiceid}) src="assets/CTA HOME.svg" alt="">
+                </div>
+            </div>`
+        }
+        else{
+            document.querySelector('.whTrackOrderMain').style.display='none'
+            document.querySelector('.whFooter').style.display='none'
+        }
+    })
 
+    document.querySelector('.seeAllBtn').addEventListener('click',()=>{
+        window.location.href='trackOrder.html'
+    })
+    function orderSummary(id){
+        window.location.href=`trackOrderSingle.html?orderno=${id}`
+    }

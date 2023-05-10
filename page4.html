@@ -113,7 +113,22 @@
                             If the customer has opted for door delivery of forex or door pickup of forex/KYC documents and if the location is beyond the door delivery/pickup distance of the money changer, then the money changer may refuse to serve the forex order and no charges will be applicable to the customer.</p>
                     </div>
 
-                        <span>Close</span>
+                        <span class="closeCancelation">Close</span>
+                </div>
+            </div>
+
+            <div class="termsAndConditionAreaMain">
+                <div class="termsAndConditionArea">
+                    
+                    <div class="termsAndConditionAreaScroll">
+                        <h2>Terms and conditions</h2>
+                        <p>Who We Are
+                            ExTravelMoney Technosol Pvt Ltd,28B, Infopark TBC,Sector E, JNI Stadium,Kaloor, Cochin, Kerala 682 017</p>
+                        <p>You can contact us at: care@extravelmoney.com or 04842886900</p>
+                        <p>Use of the Website,This website, (the "Website"), is operated by ExTravelMoney Technosol Pvt Ltd (“ExTravelMoney" or "us" or "our"). Access is provided only in accordance with ExTravelMoney ’s Online Terms and Conditions. Please read the following Online Terms and Conditions carefully before you start to use the Website. By using the Website and availing our services, you indicate that you have read, understood and accepted these Online Terms and Conditions including any additional or amended terms or conditions as applicable for a particular service from time to time and that you agree to abide by them. By using any of the services on our website, you represent and warrant that you are 18 years of age. We may decline to render any services to you, if we find that you are less than 18 years of age.If you do not agree to the Online Terms and Conditions, please refrain from using the Website and from using our services.</p>
+                    </div>
+
+                        <span class="closeTerms">Close</span>
                 </div>
             </div>
             
@@ -128,8 +143,8 @@
                 <div class="summarySubDiv">
                     <h3>Please fill in required details</h3>
                     <p>Your contact details</p>
-                    <input type="text" placeholder="Full Name">
-                    <input type="text" placeholder="Email">
+                    <input type="text" class="userName" style="cursor: not-allowed;" disabled placeholder="Full Name">
+                    <input type="text" class="userEmail" style="cursor: not-allowed;" disabled placeholder="Email">
                     <div class="sub1">
                         <img src="assets/Icon.svg" alt="">
                         <span>Contact details registered with Niyo</span>
@@ -146,7 +161,7 @@
                     <div class="travelDateBtn">Travel Date
                         <span><span class="dd">DD</span>/<span class="mm">MM</span>/<span class="yy">YY</span></span>
                     </div>
-                    <div class="purposeOfTravelBtn" style="display: flex;align-items: center;justify-content: space-between;"><span >Purpose of Travel </span> <img style="margin-right: 20px;width: 11px;" src="assets/arrowDown.svg" alt=""></div>
+                    <div class="purposeOfTravelBtn" style="display: flex;align-items: center;justify-content: space-between;"><span >Holiday/Leisure Trip</span> <img style="margin-right: 20px;width: 11px;" src="assets/arrowDown.svg" alt=""></div>
                 </div>
                 <div class="divider"></div>
                 <div class="summarySubDiv3">
@@ -156,19 +171,17 @@
                             
                             <span class="count">1</span>
                             <div>
-                                <p>Document 1<img style="margin-left: 7px;" src="assets/Icon.svg" alt=""></p>
+                                <p>Valid Indian Passport (address & photo page)<img style="margin-left: 7px;" src="assets/Icon.svg" alt=""></p>
                                 <small>Only .jpg/.png /.pdf (Max Size: 2 Mb)</small>
                             </div>
                         </div>
                        <div style="display: flex;align-items: center;justify-content: center;width: 23%;"><span class="uploadBtn">Upload</span></div> 
                     </div>
-
-
                     <div class="uploadDocument">
                         <div style="display: flex;align-items:start;">
                             <span class="count">2</span>
                             <div>
-                                <p>Document 2<img style="margin-left: 7px;" src="assets/Icon.svg" alt=""></p>
+                                <p>Pan Card<img style="margin-left: 7px;" src="assets/Icon.svg" alt=""></p>
                                 <small>Only .jpg/.png /.pdf (Max Size: 2 Mb)</small>
                             </div>
                         </div>
@@ -178,7 +191,7 @@
                         <div style="display: flex;align-items:start;">
                             <span class="count">3</span>
                             <div>
-                                <p>Document 3<img style="margin-left: 7px;" src="assets/Icon.svg" alt=""></p>
+                                <p>Onward Air ticket showing travel within 60 days<img style="margin-left: 7px;" src="assets/Icon.svg" alt=""></p>
                                 <small>Only .jpg/.png /.pdf (Max Size: 2 Mb)</small>
                             </div>
                         </div>
@@ -188,7 +201,7 @@
                         <div style="display: flex;align-items:start;">
                             <span class="count">4</span>
                             <div>
-                                <p>Document 4<img style="margin-left: 7px;" src="assets/Icon.svg" alt=""></p>
+                                <p>Return Air Ticket<img style="margin-left: 7px;" src="assets/Icon.svg" alt=""></p>
                                 <small>Only .jpg/.png /.pdf (Max Size: 2 Mb)</small>
                             </div>
                         </div>
@@ -198,7 +211,7 @@
                         <div style="display: flex;align-items:start;">
                             <span class="count">5</span>
                             <div>
-                                <p>Document 5<img style="margin-left: 7px;" src="assets/Icon.svg" alt=""></p>
+                                <p>Valid Visa (Not required for Visa on Arrival)<img style="margin-left: 7px;" src="assets/Icon.svg" alt=""></p>
                                 <small>Only .jpg/.png /.pdf (Max Size: 2 Mb)</small>
                             </div>
                         </div>
@@ -210,13 +223,13 @@
                 <div class="summarySubDiv4">
                     <p class="title">Select a mode of delivery </p>
                     <div class="storePicup" id="storePicup">
-                        <input type="radio" id="deliveryMode" name="deliveryMode" style="margin-top: 20px;margin-right: 15px;transform: scale(1.4);">
+                        <input type="radio" id="deliveryMode" value="storePickup" name="deliveryMode" style="margin-top: 20px;margin-right: 15px;transform: scale(1.4);">
                         <div class="storePicupSub" style="display: flex;width: 100%;padding: 25px 5px;position: relative;">
                             <div style="display: flex;flex-direction: column;padding:0 15px;width: 100%;">
                                 <p >Store Pickup</p>
                                 <span>Store visit is required</span>
-                                <span>Store #10733</span>
-                                <span>Telibandha, Raipur</span>
+                                <span class="storeId"></span>
+                                <span class="storeAddress"></span>
                                 <span class="detailsSpan" >Details <img src="assets/Icon.svg" alt=""></span>
                             </div>
                             <span class="changeStore" >Change Store</span>
@@ -226,12 +239,12 @@
                     </div>
     
                     <div class="storePicup" id="doorDelivery">
-                        <input type="radio" id="deliveryMode2" name="deliveryMode" style="margin-top: 20px;margin-right: 15px;transform: scale(1.4);">
+                        <input type="radio"  id="deliveryMode2" value="doorDelivery" name="deliveryMode" style="margin-top: 20px;margin-right: 15px;transform: scale(1.4);">
                         <div class="storePicupSub doorDeliverySub" style="display: flex;width: 100%;padding: 25px 5px;">
                             <div style="display: flex;flex-direction: column;padding:0 15px;width: fit-content;">
                                 <p >Door Delivery</p>
-                                <span>Door delivery available at ₹150</span>
-                                <span>Guaranteed Delivery in 2 working days</span>
+                                <span class="doorDeliveryDetail"></span>
+                                <span class="doorDeliveryDetail2">Guaranteed Delivery in 3 working days</span>
                                 <span class="detailsSpan" >Details <img src="assets/Icon.svg" alt=""></span>
                             </div>
     
@@ -249,17 +262,17 @@
                         </div>
                         <div class="summaryContainerSub">
                             <div style="font-size: 0.7rem;color: #5A6068;"><span>Item</span><span>Price</span></div>
-                            <div><span>Product Total</span><span>₹83,250</span></div>
-                            <div><span>Goods & Service Tax</span><span>₹180.20</span></div>
-                            <div><span>Store Transaction Charge</span><span>₹0.00</span></div>
-                            <div><span>Roundoff</span><span>-₹0.28</span></div>
+                            <div><span>Product Total</span><span class="productTotal">₹83,250</span></div>
+                            <div><span>Goods & Service Tax</span><span class="serviceTax">₹180.20</span></div>
+                            <div><span>Store Transaction Charge</span><span class="transactionFee">₹0.00</span></div>
+                            <div><span>Roundoff</span><span class="roundOff">-₹0.28</span></div>
     
-                            <div class="totalDiv"><span>Total</span> <span>₹94,915</span></div>
+                            <div class="totalDiv"><span>Total</span> <span class="fTotal">₹94,915</span></div>
     
                         </div>
                     </div>
                     <div class="rateTimer">
-                        Rate expires in <span>09:59 mins</span> 
+                       <p> Rate expires in</p> <span >09:59 </span>
                     </div>
                 </div>
                 <div class="summarySubDiv6">
@@ -268,8 +281,8 @@
                         <div class="paymentChoose" id="netBanking">
                             <input name="paymentMethod" id="paymentMethod" type="radio" style="margin-top: 5px;">
                             <div >
-                                <p style="margin-bottom: 10px;">Net Banking / Debit Card / UPI</p>
-                                <span style="line-height: 22px;font-size: 0.8rem;color: #5A6068;">You’ll be redirected to our payment gateway, you can make the full payment using Net-banking, Debit Card or UPI.</span>
+                                <p style="margin-bottom: 10px;">Net Banking </p>
+                                <span style="line-height: 22px;font-size: 0.8rem;color: #5A6068;">You’ll be redirected to our payment gateway, you can make the full payment using Net-banking.</span>
                             </div>
                         </div>
                         <div class="paymentChoose" id="neft" style="border-top: 1.5px solid #DEE2E1;padding-top: 2rem;">
@@ -279,10 +292,10 @@
                     </div>
                 </div>
                 <div class="summarySubDiv7">
-                    <input type="checkbox">
-                    <p>I’m a resident Indian and will produce the required KYC Documents. I confirm the total foreign exchange i purchased or remitted via all sources in India this financial year, including this transaction, is within RBI limit of USD 2,50,000.I agree to the <span >Terms and Conditions</span> and  <span class="cancelationPolicyBtn">Cancellation & Refund Policy</span> of ExTravelmoney Technosol Pvt. Ltd.</p>
+                    <input id="agreementPolicy" type="checkbox">
+                    <p>I’m a resident Indian and will produce the required KYC Documents. I confirm the total foreign exchange i purchased or remitted via all sources in India this financial year, including this transaction, is within RBI limit of USD 2,50,000.I agree to the <span class="termsAndConditionBtn">Terms and Conditions</span> and  <span class="cancelationPolicyBtn">Cancellation & Refund Policy</span> of ExTravelmoney Technosol Pvt. Ltd.</p>
                 </div>
-                <div class="summarySubDiv8">
+                <div class="summarySubDiv8 placeOrderBtn">
                     <span>Place Order</span>
                 </div>
             </div>

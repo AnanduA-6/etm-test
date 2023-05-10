@@ -13,6 +13,20 @@
         rel="stylesheet">
 </head>
 
+<style>
+    .locDropDown {
+        width: 100%;
+        outline: none;
+        border: none;
+        border: 1px solid #b7aeae;
+        height: 3rem;
+    }
+
+    .locDropDown option {
+        width: 100%;
+    }
+</style>
+
 <body>
     <div class="main">
         <div class="header">
@@ -26,11 +40,31 @@
                 <h2>Help us with your location</h2>
                 <p>Please enter your location to find and access best deals across 4,000+ money changers nationwide.
                 </p>
-                <div class="inputArea">
+                <!-- <div class="inputArea">
                     <input type="text" class="searchBar">
                     <img src="assets/searchBtn.svg" alt="">
                     <span class="clearBtn">clear</span>
-                </div>
+                </div> -->
+                <select class="locDropDown" name="" id="">
+                    <option value="null">Select</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Noida">Noida</option>
+                    <option value="Gurgaon">Gurgaon</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Surat">Surat</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Kochi">Kochi</option>
+                    <option value="Trivandrum">Trivandrum</option>
+                    <option value="Calicut">Calicut</option>
+                    <option value="Trissur">Trissur</option>
+
+                </select>
                 <div class="locationListing">
                     <!-- <p class="locationListingItems">Byron Baazar, Raipur &nbsp;&nbsp;<span>(1 Forex Stores)</span></p>
                     <p  class="locationListingItems">All around Raipur &nbsp;&nbsp;<span>(3 Forex Stores)</span></p>
@@ -48,6 +82,36 @@
         </div>
 
     </div>
+
+    <script>
+        let token=sessionStorage.getItem('token')
+        document.querySelector('.locDropDown').addEventListener('change', (e) => {
+            let input = e.target.value
+
+            if (input != 'null') {
+            fetch('https://mvc.extravelmoney.com/pwa-functions/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: `action=store_list&area=${input}&token=${token}&all=all&district=${input}`
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // console.log(token);
+                    // console.log(data);
+                    const storesData = JSON.stringify(data)
+                    sessionStorage.setItem('storesData', storesData)
+
+                    window.location.href = "page3.html";
+                    searchBar.value = '';
+                })
+                .catch(error => console.error(error))
+                
+            }
+
+        })
+    </script>
 
 
 

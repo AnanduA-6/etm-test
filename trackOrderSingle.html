@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExTravelMoney</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    .cancellationPopUp{
+        width: 100%;
+        position: absolute;
+        height: 10rem;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 4, 23, 0.6);
+        z-index: 10;
+        height: 100vh;
+        display: none;
+
+    }
+    .cancellationPopUpSub{
+        width: 80%;
+        background-color: #FDFDFD;
+        padding: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        row-gap: 2rem;
+        line-height: 25px;
+        border-radius: 10px;
+    }
+    .cancellationButtons{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        
+    }
+    .cancellationButtons span{
+        width: 40%;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 30px;
+        border: 1.5px solid #14191F;
+    }
+    .cancellationButtons span:nth-child(2){
+        background-color: #14191F;
+        color: white;
+    }
+</style>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="headerSub">
+                <img src="assets/backArrow.svg" alt="">
+            </div>
+        </div>
+        <div style="display: flex;align-items: center;justify-content: center;">
+            <div class="trackOrderMain singleOrder">
+                <h3 class="title">Order details</h3>
+                <div class="orderCardOverView">
+                    <div class="orderCrdSubDiv1 pendingOrder">
+                        <span>Order ID</span>
+                        <span class="status">
+
+                        </span>
+                    </div>
+                    <div class="orderCrdSubDiv2">
+                        <h4 class="orderId"></h4>
+                    </div>
+                    <div class="orderCrdSubDiv3">
+                        <span>Currencies Booked</span>
+                        <span>Booked On</span>
+                        <span class="currenciesList"></span>
+                        <span class="date"></span>
+                    </div>
+                </div>
+                <h4 style="width: 85%;">Order Summary</h4>
+                <div class="currencies">
+                    
+                </div>
+                <div class="summaryContainer " style="margin-bottom: 2rem;">
+                    <div class="summaryTitle">
+                        <p>Summary (USD+AUD)</p>
+                    </div>
+                    <div class="summaryContainerSub">
+                        <div style="font-size: 0.7rem;color: #5A6068;"><span>Item</span><span>Price</span></div>
+                        <div><span>Product Total</span><span class="productTotal">₹</span></div>
+                        <div><span>Goods & Service Tax</span><span class="serviceTax">₹</span></div>
+                        <div><span>Store Transaction Charge</span><span class="transactionFee">₹</span></div>
+                        <div><span>Roundoff</span><span class="roundOff">₹</span></div>
+                        <div class="totalDiv"><span>Total</span> <span class="fTotal">₹</span></div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="kycUploadDetails">
+                    <h3>Uploaded documents for KYC</h3>
+                    <div><img src="assets/confirmedOrder (1).svg" alt=""> <span>Indian Passport</span></div>
+                    <div><img src="assets/confirmedOrder (1).svg" alt=""> <span>Pan Card</span></div>
+                    <div><img src="assets/confirmedOrder (1).svg" alt=""> <span>Onward Air Ticket</span></div>
+                    <div><img src="assets/confirmedOrder (1).svg" alt=""> <span>Return Air Ticket</span></div>
+                    <div><img src="assets/confirmedOrder (1).svg" alt=""> <span>Valid Visa</span></div>
+
+                </div>
+                <div class="kycAlternative">
+                    <div>
+                        <img src="assets/Icon.svg" alt="">
+                    <p>The forex store may sometimes request for original KYC documents for verification. Kindly keep the originals handy in such a case. If you are not able to upload the KYC, simply e-mail the documents to <span style="text-decoration: underline;">kyc@extravelmoney.com</span> or send via WhatsApp to 04842886900</p>
+                    </div>                   
+                </div>
+                <div class="buttonsDiv">
+                    <span class="cancelAlertBtn">Cancel Order</span>
+                    <span class="homeNav">Home</span>
+                </div>
+            </div>
+        </div>
+        <div class="cancellationPopUp">
+            <div class="cancellationPopUpSub">
+                <div style="display: flex;align-items: start;column-gap: 0.5rem;">
+                    <img style="margin-top: 5px;width: 1.5rem;" src="assets/pendingOrder.svg" alt="">
+                    <p>Cancellations are subject to 3% cancellation charges. Do you still want to proceed?</p>
+
+                </div>
+                
+                <div class="cancellationButtons">
+                    <span class="no">No</span> <span class="yes">Yes</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="trackOrderSingle.js"></script>
+</html>
